@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Card from '../componests/Card'
+import Card from '../components/Card'
 import {
   onMounted
 } from 'vue'
@@ -23,7 +23,7 @@ import {
 import useTodos from "../hooks/useTodos"
 import useSaying from "../hooks/useSaying"
 export default {
-  name: "Todo",
+  name: ["Todo"],
   components: {
     Card
   },
@@ -35,17 +35,15 @@ export default {
       newTodo,
       changeTodo
     } = useTodos()
-
     const {
       setSaying,
       newSaying
     } = useSaying()
-
     onMounted(() => {
       setSaying()
     })
     const today = getDate();
-    return{
+    return {
       todos,
       addTodo,
       removeTodo,
